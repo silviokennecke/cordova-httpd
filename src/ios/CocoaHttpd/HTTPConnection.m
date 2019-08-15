@@ -1094,6 +1094,10 @@ static NSMutableArray *recentNonces;
 	NSString *contentTypeStr = [NSString stringWithFormat:@"multipart/byteranges; boundary=%@", ranges_boundry];
 	[response setHeaderField:@"Content-Type" value:contentTypeStr];
 	
+	// add cors header too all responses
+	NSString *accessControllAllowOriginStr = @"*";
+	[response setHeaderField:@"Access-Control-Allow-Origin" value:accessControllAllowOriginStr];
+	
 	return response;
 }
 

@@ -16,11 +16,15 @@ Why http access is good?
 * For security reason, browser does not support local AJAX calls. It's big bottle neck to deploy HTML5 games to Cordova platform. 
 * The most popular phaser.js game engine, a httpd is always required, as it use AJAX to load resource. 
 
+## Difference to original repository ##
+
+I've added some code, that will add a CORS header to all responses, allowing all sources websites to access.
+
 ## How to use CorHttpd? ##
 
 Add the plugin to your cordova project:
 
-    cordova plugin add https://github.com/floatinghotpot/cordova-httpd.git
+    cordova plugin add https://github.com/silviokennecke/cordova-httpd.git
 
 Quick start, copy the demo files, and just build to play.
 

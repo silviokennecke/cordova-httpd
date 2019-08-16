@@ -468,9 +468,6 @@ public class NanoHTTPD
 
 				if ( method.equalsIgnoreCase( "PUT" ))
 					files.put("content", saveTmpFile( fbuf, 0, f.size()));
-
-				// add cors header
-				header.addHeader( "Access-Control-Allow-Origin", "*");
 				
 				// Ok, now do the serve()
 				Response r = serve( uri, method, header, parms, files );
@@ -1096,6 +1093,8 @@ public class NanoHTTPD
 		}
 
 		res.addHeader( "Accept-Ranges", "bytes"); // Announce that the file server accepts partial content requestes
+                res.addHeader( "Access-Control-Allow-Origin", "*"); // add cors header
+		
 		return res;
 	}
 

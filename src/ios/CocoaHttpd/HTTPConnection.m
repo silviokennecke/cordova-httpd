@@ -1182,6 +1182,10 @@ static NSMutableArray *recentNonces;
 		}
 		response = [[HTTPMessage alloc] initResponseWithStatusCode:status description:nil version:HTTPVersion1_1];
 		
+		
+		// add cors header too all responses
+		[response setHeaderField:@"Access-Control-Allow-Origin" value:@"*"];
+		
 		if (isChunked)
 		{
 			[response setHeaderField:@"Transfer-Encoding" value:@"chunked"];
